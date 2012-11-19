@@ -21,7 +21,7 @@ public class InOrderIterator implements Iterator<CompositeExpressionElement>
 	}
 
 	@Override
-	public ExpressionElement next()
+	public CompositeExpressionElement next()
 	{
 		// TODO Auto-generated method stub
 		return null;

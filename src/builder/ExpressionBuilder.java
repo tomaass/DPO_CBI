@@ -20,6 +20,8 @@ public abstract class ExpressionBuilder {
     public void createNewArithmeticExpression(){
         expression = new ArithmeticExpression();
     }
+
+    public abstract void buildTree();
     
     
     

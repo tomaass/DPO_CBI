@@ -1,10 +1,16 @@
 package cvut.fit.dpo.pr2;
 
+import builder.Director;
+import builder.ExpressionBuilder;
+import builder.InOrderBuilder;
+import builder.PostOrderBuilder;
 import cvut.fit.dpo.arithmetic.AddOperator;
 import cvut.fit.dpo.arithmetic.ArithmeticExpression;
 import cvut.fit.dpo.arithmetic.BinaryOperator;
 import cvut.fit.dpo.arithmetic.NumericOperand;
 import cvut.fit.dpo.arithmetic.SubstractOperator;
+import java.lang.annotation.Annotation;
+import javax.annotation.PostConstruct;
 
 
 /**
@@ -68,7 +74,16 @@ public class ArithmeticExpressionCreator
 	 */
 	public ArithmeticExpression createExpressionFromRPN(String input)
 	{
+            Director director = new Director();
+            
+            //ExpressionBuilder inOrderBuilder = new InOrderBuilder();
+            ExpressionBuilder postOrderBuilder = new PostOrderBuilder(input);
+            
+            director.setExpressionBuilder(postOrderBuilder);
+            director.buildExpression();
+            
+            return director.getExpressionBuilder();
 		// Good entry point for Builder :)
-		throw new UnsupportedOperationException("Don't know how to do it :(");
+		//throw new UnsupportedOperationException("Don't know how to do it :(");
 	}
 }

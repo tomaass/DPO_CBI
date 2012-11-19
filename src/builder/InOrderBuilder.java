@@ -9,5 +9,10 @@ package builder;
  * @author Maty
  */
 public class InOrderBuilder extends ExpressionBuilder {
+
+    @Override
+    public void buildTree() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
     
 }

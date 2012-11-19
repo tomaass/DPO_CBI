@@ -10,16 +10,13 @@ import cvut.fit.dpo.arithmetic.elements.ExpressionElement;
  *
  * @author Maty
  */
-public class InOrderBuilder extends ExpressionBuilder {
+public class InOrderBuilder extends ExpressionBuilder{
     
     
     public void AddElement (ExpressionElement element){
         
     }
 
-    @Override
-    public void buildTree() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
+   
     
 }

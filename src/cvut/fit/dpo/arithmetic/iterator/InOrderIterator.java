@@ -46,12 +46,11 @@ public class InOrderIterator implements Iterator<CompositeExpressionElement>
         }else{
             
         }
+        return null;
         
     }
     
-    private CompositeExpressionElement left(CompositeExpressionElement start){
-        
-    }
+    
 
     @Override
     public void remove() {

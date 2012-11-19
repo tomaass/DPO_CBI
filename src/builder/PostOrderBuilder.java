@@ -10,9 +10,6 @@ package builder;
  */
 public class PostOrderBuilder extends ExpressionBuilder {
 
-    @Override
-    public void buildTree() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
+    
     
 }

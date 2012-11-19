@@ -1,14 +1,16 @@
 package cvut.fit.dpo.arithmetic.elements;
 
 
-public class Number implements ExpressionElement
+public class Number extends CompositeExpressionElement
 {
+
+    public Number(Integer value, CompositeExpressionElement parent) {
+        super(parent);
+        this.value = value;
+    }
 	private Integer value;
 	
-	public Number(Integer value)
-	{
-		this.value = value;
-	}
+	
 	
 	@Override
 	public String stringValue()

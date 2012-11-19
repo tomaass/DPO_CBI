@@ -2,17 +2,15 @@ package cvut.fit.dpo.arithmetic.iterator;
 
 import java.util.Iterator;
 
-import cvut.fit.dpo.arithmetic.elements.CompositeExpressionElement;
+import cvut.fit.dpo.arithmetic.elements.ExpressionElement;
 import cvut.fit.dpo.arithmetic.elements.ExpressionElement;
 
-public class InOrderIterator implements Iterator<CompositeExpressionElement>
+public class InOrderIterator implements Iterator<ExpressionElement>
 {
 	
-	private CompositeExpressionElement actual;
+	private ExpressionElement actual;
 	
-	public InOrderIterator (CompositeExpressionElement root){
-		actual = root;
-	}
+	
 
 	@Override
 	public boolean hasNext()
@@ -21,7 +19,7 @@ public class InOrderIterator implements Iterator<CompositeExpressionElement>
 	}
 
 	@Override
-	public CompositeExpressionElement next()
+	public ExpressionElement next()
 	{
 		// TODO Auto-generated method stub
 		return null;

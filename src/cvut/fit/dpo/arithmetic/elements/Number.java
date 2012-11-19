@@ -1,7 +1,7 @@
 package cvut.fit.dpo.arithmetic.elements;
 
 
-public class Number extends CompositeExpressionElement
+public class Number implements ExpressionElement
 {
 	private Integer value;
 	

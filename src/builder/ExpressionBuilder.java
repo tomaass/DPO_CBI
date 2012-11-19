@@ -21,8 +21,7 @@ public abstract class ExpressionBuilder {
         expression = new ArithmeticExpression();
     }
 
-    public abstract void buildTree();
-    
+    public abstract void buildTree();  
     
     
 }

@@ -23,7 +23,7 @@ public class Director {
     
     public void buildExpression(){
         expressionBuilder.createNewArithmeticExpression();
-        expressionBuilder.buildTree();
+        //expressionBuilder.buildTree();
     }
 
 }

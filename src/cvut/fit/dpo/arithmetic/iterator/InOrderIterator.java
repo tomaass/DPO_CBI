@@ -1,6 +1,7 @@
 package cvut.fit.dpo.arithmetic.iterator;
 
 import cvut.fit.dpo.arithmetic.elements.CompositeExpressionElement;
+import java.util.ArrayList;
 import java.util.Iterator;
 
 
@@ -8,53 +9,35 @@ import java.util.Iterator;
 public class InOrderIterator implements Iterator<CompositeExpressionElement>
 {
     
-    CompositeExpressionElement actual;
-    CompositeExpressionElement root;
-    boolean down = true;
+        
+   private ArrayList<CompositeExpressionElement> queue = new ArrayList<CompositeExpressionElement>(); 
+   private int actual = 0;
+   
+   public InOrderIterator(CompositeExpressionElement root){
+       inorder(root);
+   } 
     
-    public InOrderIterator(CompositeExpressionElement root){
-        this.root = root;
-        actual = root;
+    private void inorder(CompositeExpressionElement node){
+        if (!(node == null)){
+            inorder(node.getChild().get(0));
+            queue.add(node);
+            inorder(node.getChild().get(1));
+        }
     }
     @Override
     public boolean hasNext() {
-        if (root.getChild().get(1)!= null){
-            CompositeExpressionElement tmp = root.getChild().get(1);
-            while(tmp.getChild().get(1) != null){
-                tmp = tmp.getChild().get(1);
-            }
-            while (tmp.getChild().get(0) != null){
-                tmp = tmp.getChild().get(0);
-            }
-            if (tmp == actual){
-                return false;
-            }else{
-                return true;
-            }
-        }else{
-            return false;
-        }
+        return (actual != queue.size()-1);
     }
 
     @Override
     public CompositeExpressionElement next() {
-        if (actual.isVisit()){
-            if(actual.getParent().getChild().get(0) == actual){
-                actual.getParent().setVisit(true);
-                return actual.getParent();
-            }
-        }else{
-            
-        }
-        return null;
-        
-    }
-    
-    
+        actual++;
+        return queue.get(actual);
+    }    
 
     @Override
     public void remove() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        queue.remove(actual);
     }
 	
 	

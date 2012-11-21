@@ -1,13 +1,26 @@
 package cvut.fit.dpo.arithmetic;
 
+import cvut.fit.dpo.arithmetic.elements.CompositeExpressionElement;
 import java.util.Iterator;
 
 import cvut.fit.dpo.arithmetic.elements.ExpressionElement;
+import cvut.fit.dpo.arithmetic.iterator.InOrderIterator;
+import cvut.fit.dpo.arithmetic.iterator.PostOrderIterator;
 
-public class ArithmeticExpression
+public class ArithmeticExpression extends CompositeExpressionElement
 {
 	private BinaryOperator root;
-	
+        private InOrderIterator inIterator = new InOrderIterator(root);
+        private PostOrderIterator postIterator = new PostOrderIterator(root);
+
+    public ArithmeticExpression(BinaryOperator root, CompositeExpressionElement parent) {
+        super(parent);
+        this.root = root;
+    }
+        
+        
+        
+      
 	public Integer evaluate()
 	{
 		return root.evaluate();
@@ -33,9 +46,9 @@ public class ArithmeticExpression
 	 * 
 	 * @return
 	 */
-	public Iterator<ExpressionElement> getInOrderIterator()
+	public Iterator<CompositeExpressionElement> getInOrderIterator()
 	{
-		throw new UnsupportedOperationException("Not yet implemented...");
+            return inIterator;
 	}
 
 	/**
@@ -45,9 +58,9 @@ public class ArithmeticExpression
 	 * 
 	 * @return
 	 */
-	public Iterator<ExpressionElement> getPostOrderIterator()
+	public PostOrderIterator getPostOrderIterator()
 	{
-		throw new UnsupportedOperationException("Not yet implemented...");
+		return postIterator;
 	}
 
 }

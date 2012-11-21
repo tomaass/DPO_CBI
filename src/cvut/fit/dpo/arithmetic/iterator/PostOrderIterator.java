@@ -1,12 +1,10 @@
 package cvut.fit.dpo.arithmetic.iterator;
 
 import cvut.fit.dpo.arithmetic.elements.CompositeExpressionElement;
+import java.util.ArrayList;
 import java.util.Iterator;
 
-import cvut.fit.dpo.arithmetic.elements.ExpressionElement;
-import java.util.ArrayList;
-
-public class PostOrderIterator implements Iterator<ExpressionElement> {
+public class PostOrderIterator implements Iterator<CompositeExpressionElement> {
 
     private ArrayList<CompositeExpressionElement> queue = new ArrayList<CompositeExpressionElement>();
     private int actual = 0;
@@ -29,7 +27,7 @@ public class PostOrderIterator implements Iterator<ExpressionElement> {
     }
 
     @Override
-    public ExpressionElement next() {
+    public CompositeExpressionElement next() {
         actual++;
         return queue.get(actual);
     }

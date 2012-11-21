@@ -1,5 +1,6 @@
 package cvut.fit.dpo.arithmetic;
 
+import cvut.fit.dpo.arithmetic.elements.CompositeExpressionElement;
 import cvut.fit.dpo.arithmetic.iterator.InOrderIterator;
 import cvut.fit.dpo.arithmetic.iterator.PostOrderIterator;
 
@@ -8,13 +9,14 @@ import cvut.fit.dpo.arithmetic.iterator.PostOrderIterator;
  * 
  * @author Jan Kurš
  */
-public class NumericOperand {
+public class NumericOperand extends CompositeExpressionElement{
 	private Integer value;
+
+    public NumericOperand(Integer value, CompositeExpressionElement parent) {
+        super(parent);
+        this.value = value;
+    }
 	
-	public NumericOperand(Integer value)
-	{
-		setValue(value);
-	}
 	
 	public Integer getValue()
 	{

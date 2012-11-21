@@ -1,5 +1,7 @@
 package cvut.fit.dpo.arithmetic;
 
+import cvut.fit.dpo.arithmetic.elements.CompositeExpressionElement;
+
 /**
  * Represents + operation
  * 
@@ -9,10 +11,9 @@ package cvut.fit.dpo.arithmetic;
 public class AddOperator extends BinaryOperator
 {
 
-	public AddOperator(Object firstOperand, Object secondOperand)
-	{
-		super(firstOperand, secondOperand);
-	}
+    public AddOperator(Object firstOperand, Object secondOperand, CompositeExpressionElement parent) {
+        super(firstOperand, secondOperand, parent);
+    }
 
 	@Override
 	protected Integer evaluate(Integer val1, Integer val2)

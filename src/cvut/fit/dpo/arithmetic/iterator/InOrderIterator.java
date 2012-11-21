@@ -1,5 +1,6 @@
 package cvut.fit.dpo.arithmetic.iterator;
 
+import cvut.fit.dpo.arithmetic.BinaryOperator;
 import cvut.fit.dpo.arithmetic.elements.CompositeExpressionElement;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -16,6 +17,8 @@ public class InOrderIterator implements Iterator<CompositeExpressionElement>
    public InOrderIterator(CompositeExpressionElement root){
        inorder(root);
    } 
+
+  
     
     private void inorder(CompositeExpressionElement node){
         if (!(node == null)){

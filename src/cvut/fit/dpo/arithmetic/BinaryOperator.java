@@ -1,5 +1,6 @@
 package cvut.fit.dpo.arithmetic;
 
+import cvut.fit.dpo.arithmetic.elements.CompositeExpressionElement;
 import cvut.fit.dpo.arithmetic.iterator.InOrderIterator;
 import cvut.fit.dpo.arithmetic.iterator.PostOrderIterator;
 
@@ -9,18 +10,26 @@ import cvut.fit.dpo.arithmetic.iterator.PostOrderIterator;
  * @author Jan Kurš
  *
  */
-public abstract class BinaryOperator
+public abstract class BinaryOperator extends CompositeExpressionElement
 {
 	private Object firstOperand;
 	private Object secondOperand;
 
 	protected abstract Integer evaluate(Integer val1, Integer val2);
+
+    public BinaryOperator(Object firstOperand, Object secondOperand, CompositeExpressionElement parent) {
+        super(parent);
+        this.firstOperand = firstOperand;
+        this.secondOperand = secondOperand;
+    }
+        
+        
 	
-	public BinaryOperator(Object firstOperand, Object secondOperand)
-	{
-		setFirstOperand(firstOperand);
-		setSecondOperand(secondOperand);
-	}
+	//public BinaryOperator(Object firstOperand, Object secondOperand)
+	//{
+		//setFirstOperand(firstOperand);
+		//setSecondOperand(secondOperand);
+	//}
 	
 	void setFirstOperand(Object o)
 	{

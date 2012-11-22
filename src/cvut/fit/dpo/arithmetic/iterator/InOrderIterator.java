@@ -22,9 +22,9 @@ public class InOrderIterator implements Iterator<CompositeExpressionElement>
     
     private void inorder(CompositeExpressionElement node){
         if (!(node == null)){
-            inorder(node.getChild().get(0));
+            inorder(node.getFirstChild());
             queue.add(node);
-            inorder(node.getChild().get(1));
+            inorder(node.getSecondChild());
         }
     }
     @Override

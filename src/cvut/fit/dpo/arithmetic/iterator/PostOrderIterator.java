@@ -15,8 +15,8 @@ public class PostOrderIterator implements Iterator<CompositeExpressionElement> {
 
     private void postorder(CompositeExpressionElement node) {
         if (!(node == null)) {
-            postorder(node.getChild().get(0));
-            postorder(node.getChild().get(1));
+            postorder(node.getFirstChild());
+            postorder(node.getSecondChild());
             queue.add(node);
         }
     }

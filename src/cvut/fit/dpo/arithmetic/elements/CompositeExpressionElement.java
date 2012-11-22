@@ -18,24 +18,37 @@ public class CompositeExpressionElement implements ExpressionElement{
         throw new UnsupportedOperationException("Not supported yet.");
     }
     
-    private List<CompositeExpressionElement> child = new ArrayList<CompositeExpressionElement>();
-    private CompositeExpressionElement parent; 
+    private CompositeExpressionElement firstChild = null;
+    private CompositeExpressionElement secondChild = null;
+    private CompositeExpressionElement parent = null; 
 
     public void setParent(CompositeExpressionElement parent) {
         this.parent = parent;
     } 
+
+    public CompositeExpressionElement getFirstChild() {
+        return firstChild;
+    }
+
+    public void setFirstChild(CompositeExpressionElement firstChild) {
+        this.firstChild = firstChild;
+    }
+
+    public CompositeExpressionElement getSecondChild() {
+        return secondChild;
+    }
+
+    public void setSecondChild(CompositeExpressionElement secondChild) {
+        this.secondChild = secondChild;
+    }
     
 
-    public List<CompositeExpressionElement> getChild() {
-        return child;
-    }
+    
 
     public CompositeExpressionElement getParent() {
         return parent;
     }
     
-    public void addChild (CompositeExpressionElement newChild){
-        child.add(newChild);
-    }
+    
     
 }

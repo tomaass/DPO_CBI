@@ -19,8 +19,8 @@ public abstract class BinaryOperator extends CompositeExpressionElement
         private PostOrderIterator postIterator = new PostOrderIterator(this);
 
     public BinaryOperator(CompositeExpressionElement firstOperand, CompositeExpressionElement secondOperand) {       
-        this.getChild().add(firstOperand);
-        this.getChild().add(secondOperand);        
+        this.setFirstChild(firstOperand);
+        this.setSecondChild(secondOperand);        
     }
         
         
@@ -42,18 +42,18 @@ public abstract class BinaryOperator extends CompositeExpressionElement
 	
 	public CompositeExpressionElement getFirstOperand()
 	{
-		return this.getChild().get(0);
+		return this.getFirstChild();
 	}
 	
 	public CompositeExpressionElement getSecondOperand()
 	{
-		return this.getChild().get(1);
+		return this.getSecondChild();
 	}
 	
 	public Integer evaluate()
 	{
-		int val1 = getOperandValue(this.getChild().get(0));
-		int val2 = getOperandValue(this.getChild().get(1));
+		int val1 = getOperandValue(this.getFirstChild());
+		int val2 = getOperandValue(this.getSecondChild());
 		
 		return evaluate(val1, val2);
 	}

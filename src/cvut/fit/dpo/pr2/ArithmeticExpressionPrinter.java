@@ -5,6 +5,7 @@ import cvut.fit.dpo.arithmetic.ArithmeticExpression;
 import cvut.fit.dpo.arithmetic.BinaryOperator;
 import cvut.fit.dpo.arithmetic.NumericOperand;
 import cvut.fit.dpo.arithmetic.SubstractOperator;
+import cvut.fit.dpo.arithmetic.iterator.InOrderIterator;
 
 /**
  * Printer for {@link ArithmeticExpression}s. It can print
@@ -45,11 +46,16 @@ public class ArithmeticExpressionPrinter
 	{
 		// Remember, do not use the getRoot() method!
 		// The iterator may help :)
-		BinaryOperator root = expression.getRoot();
-		String operator = binaryOperatorToString(root);
+            
+            InOrderIterator iterator = expression.getInOrderIterator();
 
-		String lString = printInOrder(root.getFirstOperand());
-		String rString = printInOrder(root.getSecondOperand());
+		
+		
+		
+
+		String lString = printInOrder(iterator.next());
+                String operator = iterator.next().stringValue();
+		String rString = printInOrder(iterator.next());
 
 		return "(" + lString + operator + rString + ")";
 	}

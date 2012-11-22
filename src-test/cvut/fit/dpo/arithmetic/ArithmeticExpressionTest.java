@@ -1,5 +1,6 @@
 package cvut.fit.dpo.arithmetic;
 
+import cvut.fit.dpo.arithmetic.elements.CompositeExpressionElement;
 import static org.junit.Assert.*;
 
 import java.util.Iterator;
@@ -27,7 +28,7 @@ public class ArithmeticExpressionTest
 	{
 		// Creates 3 - (1 + 2)
 		ArithmeticExpression e = new ArithmeticExpressionCreator().createExpression1();
-		Iterator<ExpressionElement> it = e.getInOrderIterator();
+		Iterator<CompositeExpressionElement> it = e.getInOrderIterator();
 		assertNotNull(it);
 		
 		assertEquals("(", it.next().stringValue());
@@ -47,7 +48,7 @@ public class ArithmeticExpressionTest
 	{
 		// Creates 3 - (1 + 2)
 		ArithmeticExpression e = new ArithmeticExpressionCreator().createExpression1();
-		Iterator<ExpressionElement> it = e.getInOrderIterator();
+		Iterator<CompositeExpressionElement> it = e.getInOrderIterator();
 		assertNotNull(it);
 		it.remove();
 	}
@@ -57,7 +58,7 @@ public class ArithmeticExpressionTest
 	public void testGetPostOrderIterator()
 	{
 		ArithmeticExpression e = new ArithmeticExpressionCreator().createExpression1();
-		Iterator<ExpressionElement> it = e.getPostOrderIterator();
+		Iterator<CompositeExpressionElement> it = e.getPostOrderIterator();
 		assertNotNull(it);
 
 		// Creates 3 - (1 + 2)
@@ -74,7 +75,7 @@ public class ArithmeticExpressionTest
 	{
 		// Creates 3 - (1 + 2)
 		ArithmeticExpression e = new ArithmeticExpressionCreator().createExpression1();
-		Iterator<ExpressionElement> it = e.getPostOrderIterator();
+		Iterator<CompositeExpressionElement> it = e.getPostOrderIterator();
 		assertNotNull(it);
 		it.remove();
 	}

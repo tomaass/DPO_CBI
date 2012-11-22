@@ -44,7 +44,7 @@ public class ArithmeticExpression extends CompositeExpressionElement
 	 * 
 	 * @return
 	 */
-	public Iterator<CompositeExpressionElement> getInOrderIterator()
+	public InOrderIterator getInOrderIterator()
 	{
             return inIterator;
 	}

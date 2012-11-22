@@ -15,6 +15,10 @@ public class ArithmeticExpression extends CompositeExpressionElement
     public ArithmeticExpression(BinaryOperator root) {
         this.root = root;
     }
+
+    public ArithmeticExpression() {
+        
+    }
         
         
         

@@ -13,17 +13,17 @@ import cvut.fit.dpo.arithmetic.ArithmeticExpression;
 public class Director {
     private ExpressionBuilder expressionBuilder;
 
-    public ArithmeticExpression getExpressionBuilder() {
-        return expressionBuilder.getExpression();
-    }
-
-    public void setExpressionBuilder(ExpressionBuilder expressionBuilder) {
-        this.expressionBuilder = expressionBuilder;
+    public void setExpressionBuilder(ExpressionBuilder eb){
+        expressionBuilder = eb;
     }
     
-    public void buildExpression(){
-        expressionBuilder.createNewArithmeticExpression();
-        //expressionBuilder.buildTree();
+    public ArithmeticExpression getExpression(){
+        return expressionBuilder.getExpression();
     }
-
+    
+    public void buildExpression(int i){
+        expressionBuilder.createNewArithmeticExpression();
+        expressionBuilder.build(i);
+    }
+            
 }

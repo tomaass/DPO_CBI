@@ -17,12 +17,14 @@ public abstract class ExpressionBuilder {
         return expression;
     }
     
+    public void createNewArithmeticExpression() {
+        expression = new ArithmeticExpression();
+    }
+    
+    public abstract void build(int option);
+    
     public abstract void addNumericOperand(Integer value);
     public abstract void addAddOperator(Object operand1, Object operand2);
     public abstract void addSubtractOperator(Object operand1, Object operand2);
 
-
-    public void createNewArithmeticExpression() {
-        expression = new ArithmeticExpression();
-    }
 }

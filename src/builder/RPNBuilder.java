@@ -25,5 +25,10 @@ public class RPNBuilder extends ExpressionBuilder {
     public void addSubtractOperator(Object operand1, Object operand2) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
+
+    @Override
+    public void build(int option) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
     
 }

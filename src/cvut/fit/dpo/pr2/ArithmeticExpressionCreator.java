@@ -1,5 +1,8 @@
 package cvut.fit.dpo.pr2;
 
+import builder.Director;
+import builder.ExpressionBuilder;
+import builder.NormalBuilder;
 import cvut.fit.dpo.arithmetic.AddOperator;
 import cvut.fit.dpo.arithmetic.ArithmeticExpression;
 import cvut.fit.dpo.arithmetic.BinaryOperator;
@@ -15,6 +18,8 @@ import cvut.fit.dpo.arithmetic.SubstractOperator;
  */
 public class ArithmeticExpressionCreator
 {
+    
+    
 	/**
 	 * Creates 3 - (1 + 2)
 	 * 
@@ -23,16 +28,25 @@ public class ArithmeticExpressionCreator
 	 */
 	public ArithmeticExpression createExpression1()
 	{
-		ArithmeticExpression e = new ArithmeticExpression();
+            Director creator = new Director();
+            
+            ExpressionBuilder normalBuilder = new NormalBuilder();
+            
+            creator.setExpressionBuilder(normalBuilder);
+            creator.buildExpression(1); 
+            
+            ArithmeticExpression e = creator.getExpression();
+            
+            //ArithmeticExpression e = new ArithmeticExpression();
                 		
-		NumericOperand op1 = new NumericOperand(1);
-		NumericOperand op2 = new NumericOperand(2);
-		NumericOperand op3 = new NumericOperand(3);
-		
-		BinaryOperator o2 = new AddOperator(op1, op2);
-		BinaryOperator o1 = new SubstractOperator(op3, o2);
-		
-		e.setRoot(o1);
+//		NumericOperand op1 = new NumericOperand(1);
+//		NumericOperand op2 = new NumericOperand(2);
+//		NumericOperand op3 = new NumericOperand(3);
+//		
+//		BinaryOperator o2 = new AddOperator(op1, op2);
+//		BinaryOperator o1 = new SubstractOperator(op3, o2);
+//		
+//		e.setRoot(o1);
 		return e;
 	}
 
@@ -44,16 +58,25 @@ public class ArithmeticExpressionCreator
 	 */
 	public ArithmeticExpression createExpression2()
 	{
-		ArithmeticExpression e = new ArithmeticExpression();
-		
-		NumericOperand op1 = new NumericOperand(1);
-		NumericOperand op2 = new NumericOperand(2);
-		NumericOperand op3 = new NumericOperand(3);
-		
-		BinaryOperator o1 = new SubstractOperator(op3, op1);
-		BinaryOperator o2 = new AddOperator(o1, op2);
-		
-		e.setRoot(o2);
+            
+            Director creator = new Director();
+            
+            ExpressionBuilder normalBuilder = new NormalBuilder();
+            
+            creator.setExpressionBuilder(normalBuilder);
+            creator.buildExpression(0); 
+            
+            ArithmeticExpression e = creator.getExpression();
+//		ArithmeticExpression e = new ArithmeticExpression();
+//		
+//		NumericOperand op1 = new NumericOperand(1);
+//		NumericOperand op2 = new NumericOperand(2);
+//		NumericOperand op3 = new NumericOperand(3);
+//		
+//		BinaryOperator o1 = new SubstractOperator(op3, op1);
+//		BinaryOperator o2 = new AddOperator(o1, op2);
+//		
+//		e.setRoot(o2);
 		return e;
 	}
 	

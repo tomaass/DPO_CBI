@@ -11,11 +11,13 @@ public class InOrderIterator implements Iterator<CompositeExpressionElement>
 {
     
         
-   private ArrayList<CompositeExpressionElement> queue = new ArrayList<CompositeExpressionElement>(); 
+   private ArrayList<CompositeExpressionElement> queueList;
    private int actual = -1;
    
    public InOrderIterator(CompositeExpressionElement root){
+       queueList = new ArrayList<CompositeExpressionElement>(); 
        inorder(root);
+       //System.out.println("Iterator: pocet prvku: "+queueList.size());
    } 
 
   
@@ -23,24 +25,24 @@ public class InOrderIterator implements Iterator<CompositeExpressionElement>
     private void inorder(CompositeExpressionElement node){
         if (!(node == null)){
             inorder(node.getFirstChild());
-            queue.add(node);
+            queueList.add(node);
             inorder(node.getSecondChild());
         }
     }
     @Override
     public boolean hasNext() {
-        return (actual != queue.size()-1);
+        return (actual != queueList.size()-1);
     }
 
     @Override
     public CompositeExpressionElement next() {
         actual++;
-        return queue.get(actual);
+        return queueList.get(actual);
     }    
 
     @Override
     public void remove() {
-        queue.remove(actual);
+        queueList.remove(actual);
     }
 	
 	

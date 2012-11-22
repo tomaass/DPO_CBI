@@ -18,10 +18,7 @@ public class ArithmeticExpression extends CompositeExpressionElement
 
     public ArithmeticExpression() {
         
-    }
-        
-        
-        
+    }     
       
 	public Integer evaluate()
 	{

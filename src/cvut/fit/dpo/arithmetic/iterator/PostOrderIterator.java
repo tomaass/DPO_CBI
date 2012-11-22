@@ -7,7 +7,7 @@ import java.util.Iterator;
 public class PostOrderIterator implements Iterator<CompositeExpressionElement> {
 
     private ArrayList<CompositeExpressionElement> queue = new ArrayList<CompositeExpressionElement>();
-    private int actual = 0;
+    private int actual = -1;
 
     public PostOrderIterator(CompositeExpressionElement root) {
         postorder(root);

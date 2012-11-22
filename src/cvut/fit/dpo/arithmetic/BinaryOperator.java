@@ -15,12 +15,14 @@ public abstract class BinaryOperator extends CompositeExpressionElement
 	
 
 	protected abstract Integer evaluate(Integer val1, Integer val2);
-        private InOrderIterator inIterator = new InOrderIterator(this);
-        private PostOrderIterator postIterator = new PostOrderIterator(this);
+        private InOrderIterator inIterator;// = new InOrderIterator(this);
+        private PostOrderIterator postIterator;// = new PostOrderIterator(this);
 
     public BinaryOperator(CompositeExpressionElement firstOperand, CompositeExpressionElement secondOperand) {       
         this.setFirstChild(firstOperand);
-        this.setSecondChild(secondOperand);        
+        this.setSecondChild(secondOperand);    
+        inIterator = new InOrderIterator(this);
+        postIterator = new PostOrderIterator(this);
     }
         
         
@@ -60,7 +62,7 @@ public abstract class BinaryOperator extends CompositeExpressionElement
 	
 	public InOrderIterator inOrderIterator()
 	{
-		return inOrderIterator();
+		return inIterator;
 	}
 
 	public PostOrderIterator postOrderIterator()

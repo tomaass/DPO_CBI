@@ -12,15 +12,15 @@ import cvut.fit.dpo.arithmetic.iterator.PostOrderIterator;
  */
 public abstract class BinaryOperator extends CompositeExpressionElement
 {
-	private Object firstOperand;
-	private Object secondOperand;
+	
 
 	protected abstract Integer evaluate(Integer val1, Integer val2);
+        private InOrderIterator inIterator = new InOrderIterator(this);
+        private PostOrderIterator postIterator = new PostOrderIterator(this);
 
-    public BinaryOperator(Object firstOperand, Object secondOperand, CompositeExpressionElement parent) {
-        super(parent);
-        this.firstOperand = firstOperand;
-        this.secondOperand = secondOperand;
+    public BinaryOperator(CompositeExpressionElement firstOperand, CompositeExpressionElement secondOperand) {       
+        this.getChild().add(firstOperand);
+        this.getChild().add(secondOperand);        
     }
         
         
@@ -31,41 +31,41 @@ public abstract class BinaryOperator extends CompositeExpressionElement
 		//setSecondOperand(secondOperand);
 	//}
 	
-	void setFirstOperand(Object o)
+//	void setFirstOperand(CompositeExpressionElement o)
+//	{
+//            if (this.getChild().isEmpty())
+//	}
+//	void setSecondOperand(CompositeExpressionElement o)
+//	{
+            
+//	}
+	
+	public CompositeExpressionElement getFirstOperand()
 	{
-		firstOperand = o;
-	}
-	void setSecondOperand(Object o)
-	{
-		secondOperand = o;
+		return this.getChild().get(0);
 	}
 	
-	public Object getFirstOperand()
+	public CompositeExpressionElement getSecondOperand()
 	{
-		return firstOperand;
-	}
-	
-	public Object getSecondOperand()
-	{
-		return secondOperand;
+		return this.getChild().get(1);
 	}
 	
 	public Integer evaluate()
 	{
-		int val1 = getOperandValue(firstOperand);
-		int val2 = getOperandValue(secondOperand);
+		int val1 = getOperandValue(this.getChild().get(0));
+		int val2 = getOperandValue(this.getChild().get(1));
 		
 		return evaluate(val1, val2);
 	}
 	
 	public InOrderIterator inOrderIterator()
 	{
-		return null;
+		return inOrderIterator();
 	}
 
 	public PostOrderIterator postOrderIterator()
 	{
-		return null;
+		return postIterator;
 	}
 	
 	

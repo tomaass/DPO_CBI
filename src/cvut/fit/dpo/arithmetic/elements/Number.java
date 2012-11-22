@@ -4,8 +4,8 @@ package cvut.fit.dpo.arithmetic.elements;
 public class Number extends CompositeExpressionElement
 {
 
-    public Number(Integer value, CompositeExpressionElement parent) {
-        super(parent);
+    public Number(Integer value) {
+       
         this.value = value;
     }
 	private Integer value;

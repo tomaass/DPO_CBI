@@ -25,8 +25,8 @@ public class ArithmeticExpressionCreator
 	{
 		ArithmeticExpression e = new ArithmeticExpression();
                 		
-		NumericOperand op1 = new NumericOperand(1, null);
-		NumericOperand op2 = new NumericOperand(2, op1);
+		NumericOperand op1 = new NumericOperand(1);
+		NumericOperand op2 = new NumericOperand(2);
 		NumericOperand op3 = new NumericOperand(3);
 		
 		BinaryOperator o2 = new AddOperator(op1, op2);

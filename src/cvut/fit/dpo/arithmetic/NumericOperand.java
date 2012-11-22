@@ -11,10 +11,14 @@ import cvut.fit.dpo.arithmetic.iterator.PostOrderIterator;
  */
 public class NumericOperand extends CompositeExpressionElement{
 	private Integer value;
+        private InOrderIterator inIterator;
+        private PostOrderIterator postIterator;
 
-    public NumericOperand(Integer value, CompositeExpressionElement parent) {
-        super(parent);
+    public NumericOperand(Integer value) {
+
         this.value = value;
+        inIterator = new InOrderIterator(this);
+        postIterator = new PostOrderIterator(this);
     }
 	
 	
@@ -30,12 +34,12 @@ public class NumericOperand extends CompositeExpressionElement{
 	
 	public InOrderIterator inOrderIterator()
 	{
-		return null;
+		return inIterator;
 	}
 
 	public PostOrderIterator postOrderIterator()
 	{
-		return null;
+		return postIterator;
 	}
 	
 }

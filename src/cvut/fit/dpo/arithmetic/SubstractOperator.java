@@ -10,9 +10,11 @@ import cvut.fit.dpo.arithmetic.elements.CompositeExpressionElement;
 public class SubstractOperator extends BinaryOperator
 {
 
-    public SubstractOperator(Object firstOperand, Object secondOperand, CompositeExpressionElement parent) {
-        super(firstOperand, secondOperand, parent);
+    public SubstractOperator(CompositeExpressionElement firstOperand, CompositeExpressionElement secondOperand) {
+        super(firstOperand, secondOperand);
     }
+
+    
 
 	
 

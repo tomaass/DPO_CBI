@@ -19,22 +19,12 @@ public class CompositeExpressionElement implements ExpressionElement{
     }
     
     private List<CompositeExpressionElement> child = new ArrayList<CompositeExpressionElement>();
-    private CompositeExpressionElement parent;
-    private boolean visit = false;
+    private CompositeExpressionElement parent; 
 
-    public boolean isVisit() {
-        return visit;
-    }
-
-    public void setVisit(boolean visit) {
-        this.visit = visit;
-    }
-    
-    
-    
-    public CompositeExpressionElement(CompositeExpressionElement parent){
+    public void setParent(CompositeExpressionElement parent) {
         this.parent = parent;
-    }
+    } 
+    
 
     public List<CompositeExpressionElement> getChild() {
         return child;

@@ -9,8 +9,6 @@ public class AddOperation extends CompositeExpressionElement
 		return "+";
 	}
 
-    public AddOperation(CompositeExpressionElement parent) {
-        super(parent);
-    }
+    
         
 }

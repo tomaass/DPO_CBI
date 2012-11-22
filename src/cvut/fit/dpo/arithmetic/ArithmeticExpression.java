@@ -1,11 +1,10 @@
 package cvut.fit.dpo.arithmetic;
 
 import cvut.fit.dpo.arithmetic.elements.CompositeExpressionElement;
-import java.util.Iterator;
 
-import cvut.fit.dpo.arithmetic.elements.ExpressionElement;
 import cvut.fit.dpo.arithmetic.iterator.InOrderIterator;
 import cvut.fit.dpo.arithmetic.iterator.PostOrderIterator;
+import java.util.Iterator;
 
 public class ArithmeticExpression extends CompositeExpressionElement
 {
@@ -13,8 +12,7 @@ public class ArithmeticExpression extends CompositeExpressionElement
         private InOrderIterator inIterator = new InOrderIterator(root);
         private PostOrderIterator postIterator = new PostOrderIterator(root);
 
-    public ArithmeticExpression(BinaryOperator root, CompositeExpressionElement parent) {
-        super(parent);
+    public ArithmeticExpression(BinaryOperator root) {
         this.root = root;
     }
         

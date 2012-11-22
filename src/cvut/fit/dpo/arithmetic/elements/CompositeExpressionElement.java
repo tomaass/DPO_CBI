@@ -11,11 +11,12 @@ import java.util.List;
  *
  * @author Talisman
  */
-public class CompositeExpressionElement implements ExpressionElement{
+public abstract class CompositeExpressionElement implements ExpressionElement{
 
+   
     @Override
-    public String stringValue() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public  String stringValue() {
+        return null;        
     }
     
     private CompositeExpressionElement firstChild = null;

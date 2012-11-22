@@ -15,7 +15,10 @@ public class SubstractOperator extends BinaryOperator
     }
 
     
-
+@Override
+    public String stringValue() {
+        return "-";
+    }
 	
 
 	@Override

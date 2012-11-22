@@ -9,11 +9,13 @@ import java.util.Iterator;
 public class ArithmeticExpression extends CompositeExpressionElement
 {
 	private BinaryOperator root;
-        private InOrderIterator inIterator = new InOrderIterator(root);
-        private PostOrderIterator postIterator = new PostOrderIterator(root);
+        private InOrderIterator inIterator;// = new InOrderIterator(root);
+        private PostOrderIterator postIterator;// = new PostOrderIterator(root);
 
     public ArithmeticExpression(BinaryOperator root) {
         this.root = root;
+        inIterator = new InOrderIterator(root);
+        postIterator = new PostOrderIterator(root);
     }
 
     public ArithmeticExpression() {

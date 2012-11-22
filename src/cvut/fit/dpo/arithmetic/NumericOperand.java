@@ -20,6 +20,11 @@ public class NumericOperand extends CompositeExpressionElement{
         inIterator = new InOrderIterator(this);
         postIterator = new PostOrderIterator(this);
     }
+    
+    @Override
+    public String stringValue() {
+        return String.valueOf(value);
+    }
 	
 	
 	public Integer getValue()

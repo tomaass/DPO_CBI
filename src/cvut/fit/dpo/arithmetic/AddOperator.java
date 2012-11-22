@@ -15,12 +15,26 @@ public class AddOperator extends BinaryOperator
         super(firstOperand, secondOperand);
     }
 
-    
+//    @Override
+//    public String stringValue() {
+//        return new 
+//    }
+//    
+//    
+//
+//    
 
 	@Override
 	protected Integer evaluate(Integer val1, Integer val2)
 	{
 		return val1 + val2;
 	}
+
+    @Override
+    public String stringValue() {
+        return "+";
+    }
+        
+        
 
 }
